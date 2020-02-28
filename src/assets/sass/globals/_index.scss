@@ -1,0 +1,10 @@
+// NOTE: The src/sass/globals folder should never contain code that compiles to actual CSS, as that CSS would be duplicated across every component the file is imported into.
+@import "colors";
+@import "breakpoints";
+@import "durations";
+@import "fonts";
+@import "layers";
+@import "sizes";
+@import "typography";
+@import "mixins";
+@import "placeholders";

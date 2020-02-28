@@ -1,0 +1,59 @@
+// ===
+// Custom Outline
+// ===
+%custom-outline {
+  outline: 0;
+  box-shadow: 0 0 2px 4px $color-outline;
+}
+
+// ===
+// Change color of svg icon on hover
+// ===
+%svg-color-change-hover {
+  svg {
+    path {
+      transition: fill $duration-animation-base linear;
+    }
+    &:hover {
+      path {
+        fill: $color-primary;
+      }
+    }
+  }
+}
+
+// ===
+// Skew Borders
+// ===
+%skewBorderBefore {
+  @include angle(before, false, 5deg);
+  &::before {
+    @media (min-width: $breakpoint-sm) {
+      transform: skewY(2deg);
+    }
+  }
+}
+%skewBorderAfter {
+  @include angle(after, false, 5deg);
+  &::after {
+    @media (min-width: $breakpoint-sm) {
+      transform: skewY(-2deg);
+    }
+  }
+}
+%skewBorderBeforeFlip {
+  @include angle(before, true, 5deg);
+  &::before {
+    @media (min-width: $breakpoint-sm) {
+      transform: skewY(-2deg);
+    }
+  }
+}
+%skewBorderAfterFlip {
+  @include angle(after, true, 5deg);
+  &::after {
+    @media (min-width: $breakpoint-sm) {
+      transform: skewY(2deg);
+    }
+  }
+}

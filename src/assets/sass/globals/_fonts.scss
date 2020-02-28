@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,700|Source+Sans+Pro:200,400,700&display=swap");
+@font-face {
+  font-family: "ArcaMajora3-Heavy";
+  src: url("/src/assets/fonts/ArcaMajora3-Heavy.eot");
+  src: url("/src/assets/fonts/ArcaMajora3-Heavy.eot") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$system-default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$heading-font-family: "ArcaMajora3-Heavy", $system-default-font-family;
+$heading-font-weight: 700;
+
+$hero-font-family: "Source Sans Pro", $system-default-font-family;
+$hero-font-weight: 700;
+
+$content-font-family: "Lora", $system-default-font-family;
+$content-font-weight: 400;
+
+$button-font-family: "Source Sans Pro", $system-default-font-family;
+$button-font-weight: 400;
+
+$blockquote-font-family: "Source Sans Pro", $system-default-font-family;
+$blockquote-font-weight: 400;
+
+$blockquote-cite-font-family: $blockquote-font-family;
+$blockquote-cite-font-weight: 200;
+
+// %CLASS_NAME = sass placeholders - https://sass-lang.com/documentation/style-rules/placeholder-selectors
+%font-heading {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  color: $color-heading-text;
+}
+
+%font-heading-hero {
+  font-family: $hero-font-family;
+  font-weight: $hero-font-weight;
+  color: $color-heading-text;
+}
+%font-heading-hero-lead {
+  font-family: $hero-font-family;
+  font-weight: 200;
+  color: $color-heading-text;
+}
+
+%font-content {
+  font-family: $content-font-family;
+  font-weight: $content-font-weight;
+  color: $color-text-secondary;
+}
+
+%font-button {
+  font-family: $button-font-family;
+  font-weight: $button-font-weight;
+}
+
+%font-blockquote {
+  font-family: $blockquote-font-family;
+  font-weight: $blockquote-font-weight;
+}
+
+%font-blockquote-cite {
+  font-family: $blockquote-cite-font-family;
+  font-weight: $blockquote-cite-font-weight;
+}
