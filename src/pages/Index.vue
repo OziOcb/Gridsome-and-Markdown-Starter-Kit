@@ -4,7 +4,6 @@
       <SectionHero />
       <SectionAbout />
       <SectionSkills />
-      <SectionPortfolio />
       <SectionContact />
     </main>
   </layout>
@@ -14,7 +13,6 @@
 import SectionHero from "@/components/SectionHero.vue"
 import SectionAbout from "@/components/SectionAbout.vue"
 import SectionSkills from "@/components/SectionSkills.vue"
-import SectionPortfolio from "@/components/SectionPortfolio.vue"
 import SectionContact from "@/components/SectionContact.vue"
 
 export default {
@@ -39,7 +37,6 @@ export default {
     SectionHero,
     SectionAbout,
     SectionSkills,
-    SectionPortfolio,
     SectionContact
   }
 }
