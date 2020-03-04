@@ -9,20 +9,13 @@
       rel="noopener noreferrer"
     >
       <span class="sr-only">{{ website.svg }} in {{ parentComponent }}</span>
-      <component :is="website.svg"></component>
+      <font-awesome :icon="['fab', website.svg]" />
     </a>
   </div>
 </template>
 
 <script>
-import SvgLinkedIn from "~/assets/img/svg/linkedIn.svg"
-import SvgGitHub from "~/assets/img/svg/gitHub.svg"
-
 export default {
-  components: {
-    SvgLinkedIn,
-    SvgGitHub
-  },
   props: {
     parentComponent: {
       type: String,
@@ -33,12 +26,12 @@ export default {
     return {
       websites: [
         {
-          link: "https://github.com/OziOcb",
-          svg: "SvgGitHub"
+          link: "https://github.com/OziOcb/Gridsome-and-Markdown-Starter-Kit",
+          svg: "github"
         },
         {
-          link: "https://www.linkedin.com/in/paul-ozyzniewski/",
-          svg: "SvgLinkedIn"
+          link: "https://github.com/OziOcb/Gridsome-and-Markdown-Starter-Kit",
+          svg: "linkedin"
         }
       ]
     }
@@ -55,6 +48,7 @@ export default {
     @extend %svg-color-change-hover;
     margin: 0.2rem;
     padding: 0.5rem;
+    font-size: 28px;
     line-height: 0;
     border-radius: 5px;
   }

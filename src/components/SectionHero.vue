@@ -2,10 +2,10 @@
   <section class="hero">
     <div class="hero__contentWrapper">
       <p class="hero__lead">Hello</p>
-      <p class="hero__heading">It's Paul</p>
+      <p class="hero__heading">World!</p>
       <h1 class="hero__extraLead">
         The
-        <strong>Front End Developer</strong>
+        <strong>Gridsome and Markdown Starter Kit</strong>
         you need!
       </h1>
     </div>
@@ -48,34 +48,6 @@ export default {
       ". contentWrapper contentWrapper contentWrapper"
       "socialIcons . scrollBtn .";
   }
-  @media (min-width: $breakpoint-xl) {
-    &:before {
-      position: absolute;
-      z-index: $layer-negative-z-index;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.15;
-      content: "";
-      background: url("~@/assets/img/png/mbp.png") 60vw center no-repeat;
-      @media (min-width: $breakpoint-xxl) {
-        background-position: 53vw;
-      }
-      @media (min-width: 1441px) {
-        background-position: 47vw;
-        transform: scale(1.2);
-      }
-      @media (min-width: 1900px) {
-        background-position: 42vw;
-        transform: scale(1.2);
-      }
-      @media (min-width: 2200px) {
-        background-position: 42vw 11%;
-        transform: scale(1.6);
-      }
-    }
-  }
 
   &__contentWrapper {
     position: relative;
@@ -89,7 +61,7 @@ export default {
         top: 50%;
         left: 10px;
         font-size: 360px;
-        content: "Dev";
+        content: "Yo!";
         color: $color-text-lightest;
         transition: color $duration-animation-base ease;
         transform: translateY(-50%);
@@ -131,7 +103,6 @@ export default {
     justify-self: center;
     align-self: end;
     margin-bottom: 13vh;
-    display: none; // TODO: #043 - Create a scroll down button for the Hero Section
   }
 }
 </style>
