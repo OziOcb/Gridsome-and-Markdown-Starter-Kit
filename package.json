@@ -1,12 +1,12 @@
 {
-  "name": "pozyzniewski-portfolio",
+  "name": "gridsome-and-headless-wp",
   "version": "1.0.0",
-  "description": "This is the my personal portfolio project",
+  "description": "A basic Gridsome Starter Kit using Markdown files for the content",
   "private": true,
   "author": "Paul Ozyzniewski",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OziOcb/pozyzniewski-portfolio.git"
+    "url": "https://github.com/OziOcb/Gridsome-and-Markdown-Starter-Kit"
   },
   "scripts": {
     "build": "gridsome build",
