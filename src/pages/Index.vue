@@ -2,7 +2,6 @@
   <layout>
     <main role="main">
       <SectionHero />
-      <SectionAbout />
       <SectionSkills />
       <SectionContact />
     </main>
@@ -11,7 +10,6 @@
 
 <script>
 import SectionHero from "@/components/SectionHero.vue"
-import SectionAbout from "@/components/SectionAbout.vue"
 import SectionSkills from "@/components/SectionSkills.vue"
 import SectionContact from "@/components/SectionContact.vue"
 
@@ -35,7 +33,6 @@ export default {
   },
   components: {
     SectionHero,
-    SectionAbout,
     SectionSkills,
     SectionContact
   }
