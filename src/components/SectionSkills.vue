@@ -6,9 +6,7 @@
         <h2 class="calendarSection__title fixedSize">what am I good at?</h2>
       </div>
 
-      <div class="calendarSection__column">
-        <TheGithubCalendarDummy @open-modalGithubCalendar="$refs.modalGithubCalendar.open()" />
-      </div>
+      <div class="calendarSection__column"></div>
     </div>
     <SweetModal ref="modalGithubCalendar" overlay-theme="dark">
       test
@@ -43,14 +41,12 @@
 
 <script>
 // Github Calendar
-import TheGithubCalendarDummy from "@/components/TheGithubCalendar--dummy.vue"
 import { SweetModal } from "sweet-modal-vue"
 // SkillsGrid
 import TheSkillsGrid from "@/components/TheSkillsGrid.vue"
 
 export default {
   components: {
-    TheGithubCalendarDummy,
     SweetModal,
     TheSkillsGrid
   }
