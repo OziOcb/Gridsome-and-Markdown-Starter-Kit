@@ -56,10 +56,6 @@ export default {
           url: "/"
         },
         {
-          name: "FAQ",
-          url: "/faq/"
-        },
-        {
           name: "Blog",
           url: "/blog/"
         }
