@@ -19,7 +19,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/vue-fontawesome": "^0.1.8",
     "@gridsome/vue-remark": "^0.1.9",
-    "github-calendar": "^1.3.4",
     "gridsome": "^0.7.10",
     "gsap": "^3.0.4",
     "normalize.css": "^8.0.1",

@@ -11,7 +11,7 @@
       </div>
     </div>
     <SweetModal ref="modalGithubCalendar" overlay-theme="dark">
-      <TheGithubCalendar />
+      test
     </SweetModal>
     <!-- GitHub Calendar End -->
 
@@ -43,7 +43,6 @@
 
 <script>
 // Github Calendar
-import TheGithubCalendar from "@/components/TheGithubCalendar.vue"
 import TheGithubCalendarDummy from "@/components/TheGithubCalendar--dummy.vue"
 import { SweetModal } from "sweet-modal-vue"
 // SkillsGrid
@@ -51,7 +50,6 @@ import TheSkillsGrid from "@/components/TheSkillsGrid.vue"
 
 export default {
   components: {
-    TheGithubCalendar,
     TheGithubCalendarDummy,
     SweetModal,
     TheSkillsGrid
