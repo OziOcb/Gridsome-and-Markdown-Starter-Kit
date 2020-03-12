@@ -30,10 +30,6 @@
           </p>
         </div>
       </div>
-
-      <div class="gridSection__column gridSection__column--grid">
-        <TheSkillsGrid class="gridSection__skillsGrid" />
-      </div>
     </div>
     <!-- SkillsGrid Calendar End -->
   </section>
@@ -43,12 +39,10 @@
 // Github Calendar
 import { SweetModal } from "sweet-modal-vue"
 // SkillsGrid
-import TheSkillsGrid from "@/components/TheSkillsGrid.vue"
 
 export default {
   components: {
-    SweetModal,
-    TheSkillsGrid
+    SweetModal
   }
 }
 </script>
