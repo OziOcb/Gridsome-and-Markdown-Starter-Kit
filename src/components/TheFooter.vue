@@ -8,9 +8,14 @@
       </div>
 
       <p class="footer__copyright">
-        &copy; {{ thisYear }}
-        <g-link to="/">Paul Ozyzniewski</g-link>
-        . All rights reserved
+        <!-- &copy; {{ thisYear }}.
+        <g-link to="/">HOME_PAGE_NAME</g-link> -->
+        Created by
+        <a href="https://www.paulthedeveloper.com" target="_blank" rel="noopener noreferrer">
+          Paul Ozyzniewski
+        </a>
+        - Powered by
+        <a href="https://gridsome.org/" target="_blank" rel="noopener noreferrer">Gridsome</a>
       </p>
     </div>
   </footer>
