@@ -4,18 +4,6 @@
     <div class="calendarSection">
       <div class="calendarSection__column">
         <h2 class="calendarSection__title fixedSize">what am I good at?</h2>
-
-        <QuoteBlock align-right>
-          Tell me and I forget,
-          <br />
-          teach me and I may premember,
-          <br />
-          involve me and I learn
-
-          <template #cite>
-            Benjamin Franklin
-          </template>
-        </QuoteBlock>
       </div>
 
       <div class="calendarSection__column">
@@ -54,8 +42,6 @@
 </template>
 
 <script>
-// QuoteBlock
-import QuoteBlock from "@/components/QuoteBlock.vue"
 // Github Calendar
 import TheGithubCalendar from "@/components/TheGithubCalendar.vue"
 import TheGithubCalendarDummy from "@/components/TheGithubCalendar--dummy.vue"
@@ -68,8 +54,7 @@ export default {
     TheGithubCalendar,
     TheGithubCalendarDummy,
     SweetModal,
-    TheSkillsGrid,
-    QuoteBlock
+    TheSkillsGrid
   }
 }
 </script>
