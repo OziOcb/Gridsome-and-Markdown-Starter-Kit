@@ -29,6 +29,15 @@ query Post ($id: ID!) {
 }
 </page-query>
 
+<script>
+export default {
+  metaInfo: {
+    title: "POST_NAME",
+    meta: [{ key: "robots", name: "robots", content: "noindex, nofollow, disallow" }] // remove this line when the post is ready
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .meta {
   padding: 1rem 0.3rem;

@@ -13,21 +13,7 @@ import SectionContact from "@/components/SectionContact.vue"
 
 export default {
   metaInfo: {
-    title: "Home Page",
-    meta: [
-      { name: "author", content: "Paul Ozyzniewski" },
-      { name: "robots", content: "index, follow, noodp, noydir" },
-      {
-        name: "description",
-        content:
-          "Paul Ozyzniewski is a Barnsley-based freelance front-end web developer. He specialises in responsive HTML5, CSS, and JavaScript (Vue.js) software development."
-      },
-      {
-        name: "keywords",
-        content:
-          "HTML, CSS, JavaScript, Vue.js, Front-end, Front End Developer, Developer, Freelance"
-      }
-    ]
+    title: "Home Page"
   },
   components: {
     SectionHero,

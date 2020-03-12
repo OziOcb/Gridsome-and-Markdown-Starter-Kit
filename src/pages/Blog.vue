@@ -40,8 +40,7 @@ import { Pager } from "gridsome"
 
 export default {
   metaInfo: {
-    title: "Blog",
-    meta: [{ name: "robots", content: "noindex,nofollow,disallow" }]
+    title: "Blog"
   },
   components: {
     Pager

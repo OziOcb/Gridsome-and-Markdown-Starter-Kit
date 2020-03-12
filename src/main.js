@@ -53,13 +53,33 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 config.autoAddCss = false
 library.add(faGithub, faLinkedin, faArrowDown)
 
-// Vuelidate
+/* Vuelidate */
 import Vuelidate from "vuelidate"
 
 /**
  * Export
  */
 export default function(Vue, { router, head, isClient }) {
+  // Global Head Metadata
+  head.meta.push(
+    {
+      key: "author",
+      name: "author",
+      content: "Paul Ozyzniewski"
+    },
+    {
+      key: "description",
+      name: "description",
+      content: "YOUR DESCRIPTION IN HERE"
+    },
+    {
+      key: "keywords",
+      name: "keywords",
+      content: "YOUR, KEYWORDS, IN, HERE"
+    },
+    { key: "robots", name: "robots", content: "index, follow, noodp, noydir" }
+  )
+
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout)
 
