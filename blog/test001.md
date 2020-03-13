@@ -1,5 +1,5 @@
 ---
-title: Test Post 001
+title: Test Post Title 001
 author: Paul Ozyzniewski
 category: Digital
 created_at: 2019-11-25T22:49:26.723Z

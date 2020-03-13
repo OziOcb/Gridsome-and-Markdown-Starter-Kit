@@ -46,12 +46,12 @@ import DefaultLayout from "~/layouts/Default.vue"
 /* FontAwesome 5 */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import { config, library } from "@fortawesome/fontawesome-svg-core"
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
+import { faArrowDown, faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
-library.add(faGithub, faLinkedin, faArrowDown)
+library.add(faGithub, faLinkedin, faArrowDown, faArrowRight)
 
 /* Vuelidate */
 import Vuelidate from "vuelidate"
