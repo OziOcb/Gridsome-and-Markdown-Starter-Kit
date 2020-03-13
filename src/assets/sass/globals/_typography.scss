@@ -384,27 +384,6 @@ $typography-line-heights-contrast: (
   );
 }
 
-%typography-hero {
-  @include typography-got-rhythm(4);
-  @extend %font-heading-hero;
-}
-
-%typography-hero-lead {
-  @include typography-got-rhythm(2);
-  @extend %font-heading-hero-lead;
-}
-
-%typography-blockquote {
-  @include typography-got-rhythm(1);
-  @extend %font-blockquote;
-  line-height: 1.1 !important;
-}
-
-%typography-blockquote-cite {
-  @include typography-got-rhythm(-1);
-  @extend %font-blockquote-cite;
-}
-
 %typography-xxlarge {
   @include typography-got-rhythm(3);
   @extend %font-heading;

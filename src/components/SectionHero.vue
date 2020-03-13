@@ -73,12 +73,13 @@ export default {
   }
 
   &__lead {
-    @extend %typography-hero-lead;
-    margin: 0 0 -0.2em -0.06em;
+    @extend %typography-medium;
+    margin: 0 0 -0.8em -0.4em;
   }
   &__heading {
-    @extend %typography-hero;
+    @extend %typography-xxlarge;
     margin: 0 0 0 -0.07em;
+    font-size: 112px;
   }
   &__extraLead {
     @extend %typography-small;
