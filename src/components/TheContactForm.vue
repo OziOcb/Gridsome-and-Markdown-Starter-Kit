@@ -1,6 +1,6 @@
 <template>
   <form
-    name="Contact Me"
+    name="Contact"
     method="post"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
@@ -14,10 +14,10 @@
       </label>
     </p>
 
-    <!-- TODO: #014k - Refactore the ContactMeForm.vue component (on Hold column) -->
+    <!-- TODO: Refactore the ContactMeForm.vue component -->
     <!--
       - use 'v-for' to DRY the code
-      - find out how to use v-model with v-for and Vuelidate (I spent few hours on that already)
+      - find out how to use v-model with v-for and Vuelidate (I have spent a few hours on that already)
     -->
     <BaseInput
       id="name"
