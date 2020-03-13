@@ -1,8 +1,7 @@
 <template>
   <section class="hero">
     <div class="hero__contentWrapper">
-      <p class="hero__lead">Hello</p>
-      <p class="hero__heading">World!</p>
+      <p class="hero__heading">Hello!</p>
       <h1 class="hero__extraLead">
         The
         <strong>Gridsome and Markdown Starter Kit</strong>
@@ -54,32 +53,29 @@ export default {
     grid-area: contentWrapper;
     align-self: center;
     margin-left: 1rem;
-    @media (min-width: $breakpoint-lg) {
-      &:before {
-        position: absolute;
-        z-index: $layer-negative-z-index;
-        top: 50%;
-        left: 10px;
+    &:before {
+      position: absolute;
+      z-index: $layer-negative-z-index;
+      top: 50%;
+      left: 10px;
+      font-size: 250px;
+      content: "Yo!";
+      color: $color-text-lightest;
+      transition: color $duration-animation-base ease;
+      transform: translateY(-50%);
+      @media (min-width: $breakpoint-lg) {
         font-size: 360px;
-        content: "Yo!";
-        color: $color-text-lightest;
-        transition: color $duration-animation-base ease;
-        transform: translateY(-50%);
       }
-      &:hover:before {
-        color: rgba($color-secondary, 0.3);
-      }
+    }
+    &:hover:before {
+      color: rgba($color-secondary, 0.3);
     }
   }
 
-  &__lead {
-    @extend %typography-medium;
-    margin: 0 0 -0.8em -0.4em;
-  }
   &__heading {
     @extend %typography-xxlarge;
     margin: 0 0 0 -0.07em;
-    font-size: 112px;
+    font-size: 80px;
   }
   &__extraLead {
     @extend %typography-small;
