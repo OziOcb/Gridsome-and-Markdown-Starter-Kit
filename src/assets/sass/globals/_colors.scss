@@ -42,8 +42,8 @@ $color-button-bg-hover: darken(desaturate($color-button-bg, 20%), 10%);
 $color-button-text: $color-white;
 $color-button-shadow: $color-box-shadow;
 // alt
-$color-button-alt-bg: transparent;
-$color-button-alt-bg-hover: rgba(255, 255, 255, 0.25);
-$color-button-alt-text: $color-black;
-$color-button-alt-shadow: $color-box-shadow;
-$color-button-alt-border: $color-black;
+$color-buttonAlt-bg: transparent;
+$color-buttonAlt-bg-hover: rgba(255, 255, 255, 0.25);
+$color-buttonAlt-text: $color-black;
+$color-buttonAlt-shadow: $color-box-shadow;
+$color-buttonAlt-border: $color-black;
