@@ -115,8 +115,11 @@ export default {
     &:nth-child(odd) {
       .blogCard__imageContainer {
         order: 1;
+        &:before {
+          right: -10%;
+          left: inherit;
+        }
       }
-
       .blogCard__arrow {
         left: -20px;
       }
@@ -125,9 +128,20 @@ export default {
 
   &__imageContainer {
     @media (min-width: $breakpoint-lg) {
+      position: relative;
       display: flex;
       flex: 3;
       align-items: center;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -10%;
+        width: 60%;
+        content: "";
+        background-color: $color-body-bg-dark;
+      }
     }
   }
 
