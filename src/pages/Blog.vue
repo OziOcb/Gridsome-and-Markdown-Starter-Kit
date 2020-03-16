@@ -88,6 +88,10 @@ export default {
   padding-top: $size-section-paddingTop;
   padding-bottom: $size-section-paddingBottom;
   text-align: center;
+  @media (min-width: $breakpoint-lg) {
+    padding-right: 0;
+    padding-left: 0;
+  }
 
   &__title {
     margin: 0;
@@ -144,6 +148,11 @@ export default {
   &__image {
     display: block;
     width: 100%;
+    height: 400px;
+    object-fit: cover;
+    @media (min-width: $breakpoint-lg) {
+      height: 320px;
+    }
   }
 
   &__arrow {

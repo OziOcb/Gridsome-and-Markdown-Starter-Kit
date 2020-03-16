@@ -3,8 +3,4 @@
   padding-right: $size-gutter-width;
   padding-left: $size-gutter-width;
   max-width: $size-container-max-width;
-  @media (min-width: $breakpoint-lg) {
-    padding-right: 0;
-    padding-left: 0;
-  }
 }
