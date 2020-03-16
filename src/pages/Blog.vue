@@ -2,7 +2,8 @@
   <layout>
     <main role="main" class="blog container">
       <header class="blog__header">
-        <h1 class="blog__title">Our Stories</h1>
+        <h1 class="blog__title display-lg">Our Stories</h1>
+        <hr class="blog__divider" />
       </header>
 
       <article v-for="edge in $page.post.edges" :key="edge.node.id" class="blogCard">
@@ -24,7 +25,9 @@
             <g-link :to="edge.node.path">{{ edge.node.title }}</g-link>
           </h2>
           <p class="blogCard__excerpt">{{ edge.node.excerpt }}</p>
-          <p class="blogCard__date">{{ edge.node.category }} / {{ edge.node.created_at }}</p>
+          <p class="blogCard__details">
+            {{ edge.node.category }} / {{ formatDate(edge.node.created_at) }}
+          </p>
           <BaseLinkLikeButton class="blogCard__btn" :to="edge.node.path">
             Read the article
           </BaseLinkLikeButton>
@@ -40,7 +43,7 @@
 
 <page-query>
 query Post($page:Int) {
-  post: allPost(perPage: 6, page: $page) @paginate  {
+  post: allPost(perPage: 6, page: $page, order: DESC, sortBy: "created_at") @paginate  {
     totalCount
     pageInfo {
       totalPages
@@ -63,6 +66,7 @@ query Post($page:Int) {
 
 <script>
 import { Pager } from "gridsome"
+import { formatDateToDayMonthYear } from "@/utils/date"
 
 export default {
   metaInfo: {
@@ -70,6 +74,58 @@ export default {
   },
   components: {
     Pager
+  },
+  methods: {
+    formatDate(payload) {
+      return formatDateToDayMonthYear(payload)
+    }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.blog {
+  margin-top: 100px;
+  text-align: center;
+
+  &__title {
+    margin: 0;
+  }
+
+  &__divider {
+    margin: 30px auto 40px;
+    display: block;
+    max-width: 150px;
+    height: 3px;
+    background-color: $color-text-primary;
+    border: none;
+  }
+}
+
+.blogCard {
+  padding-bottom: $size-blogCard-paddingBottom;
+
+  &__figure {
+    margin: 0;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+
+  &__arrow {
+    display: none;
+  }
+
+  &__title a {
+    text-decoration: none;
+  }
+
+  &__details {
+    font-family: $heading-font-family;
+    font-weight: bold;
+    color: $color-text-light;
+  }
+}
+</style>
