@@ -280,7 +280,7 @@
 }
 
 // Using vertical rhythm methods from https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm
-// Using perfect 8/9 for low contrast and perfect fifth 2/3 for high
+// https://type-scale.com/
 $typography-type-scale: (
   -2: 0.79rem,
   -1: 0.889rem,
@@ -288,7 +288,9 @@ $typography-type-scale: (
   1: 1.125rem,
   2: 1.266rem,
   3: 1.424rem,
-  4: 4.5rem
+  4: 1.602rem,
+  5: 1.802rem,
+  6: 2.027rem
 );
 
 @function typography-type-scale($level) {
@@ -308,7 +310,9 @@ $typography-type-scale-contrast: (
   1: 1.777rem,
   2: 2.369rem,
   3: 3.157rem,
-  4: 7rem
+  4: 4.209rem,
+  5: 5.61rem,
+  6: 7.478rem
 );
 
 @function typography-type-scale-contrast($level) {
@@ -331,7 +335,9 @@ $typography-line-heights: (
   1: $typography-base-line-height * 1.5,
   2: $typography-base-line-height * 1.5,
   3: $typography-base-line-height * 1.5,
-  4: $typography-base-line-height * 1.5
+  4: $typography-base-line-height * 1.5,
+  5: $typography-base-line-height * 1.5,
+  6: $typography-base-line-height * 1.5
 );
 
 @function typography-line-height($level) {
@@ -353,7 +359,9 @@ $typography-line-heights-contrast: (
   1: $typography-base-line-height-contrast * 2,
   2: $typography-base-line-height-contrast * 2,
   3: $typography-base-line-height * 3,
-  4: $typography-base-line-height * 3
+  4: $typography-base-line-height * 3,
+  5: $typography-base-line-height * 3,
+  6: $typography-base-line-height * 3
 );
 
 @function typography-line-height-contrast($level) {
@@ -382,6 +390,21 @@ $typography-line-heights-contrast: (
     $size-content-width-max,
     typography-line-height-contrast($level)
   );
+}
+
+%typography-display-1 {
+  @include typography-got-rhythm(6);
+  @extend %font-heading;
+}
+
+%typography-display-2 {
+  @include typography-got-rhythm(5);
+  @extend %font-heading;
+}
+
+%typography-display-3 {
+  @include typography-got-rhythm(4);
+  @extend %font-heading;
 }
 
 %typography-xxlarge {
