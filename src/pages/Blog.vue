@@ -1,7 +1,7 @@
 <template>
   <layout>
     <main role="main" class="blog container">
-      <header class="blog__header">
+      <header>
         <h1 class="blog__title display-lg">Our Stories</h1>
         <hr class="blog__divider" />
       </header>
@@ -14,10 +14,10 @@
               :alt="edge.node.image_caption"
               :src="edge.node.image"
             />
+            <g-link class="blogCard__arrow" :to="edge.node.path">
+              <font-awesome :icon="['fas', 'arrow-right']" />
+            </g-link>
           </figure>
-          <g-link class="blogCard__arrow" :to="edge.node.path">
-            <font-awesome :icon="['fas', 'arrow-right']" />
-          </g-link>
         </div>
 
         <div class="blogCard__textContainer">
@@ -34,7 +34,7 @@
         </div>
       </article>
 
-      <footer class="blog__footer">
+      <footer>
         <Pager class="pagination" :info="$page.post.pageInfo" />
       </footer>
     </main>
@@ -106,7 +106,38 @@ export default {
 .blogCard {
   padding-bottom: $size-blogCard-paddingBottom;
 
+  @media (min-width: $breakpoint-lg) {
+    display: flex;
+    &:nth-child(odd) {
+      .blogCard__imageContainer {
+        order: 1;
+      }
+
+      .blogCard__arrow {
+        left: -20px;
+      }
+    }
+  }
+
+  &__imageContainer {
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+      flex: 3;
+      align-items: center;
+    }
+  }
+
+  &__textContainer {
+    @media (min-width: $breakpoint-lg) {
+      margin: 20px;
+      padding: 150px 80px 0 40px;
+      flex: 2;
+      text-align: left;
+    }
+  }
+
   &__figure {
+    position: relative;
     margin: 0;
   }
 
@@ -117,6 +148,27 @@ export default {
 
   &__arrow {
     display: none;
+    @media (min-width: $breakpoint-lg) {
+      position: absolute;
+      right: -20px;
+      bottom: 20px;
+      display: flex;
+      width: $size-blogCard-arrow-size;
+      height: $size-blogCard-arrow-size;
+      justify-content: center;
+      align-items: center;
+      color: $color-body-bg;
+      background-color: $color-primary;
+      border-radius: 50%;
+      box-shadow: 0px 0.6em 1.25em $color-button-shadow;
+      transition: transform $duration-animation-base cubic-bezier(0.25, 0.1, 0.4, 2),
+        box-shadow $duration-animation-base cubic-bezier(0.25, 0.1, 0.4, 2);
+      &:hover,
+      &:focus {
+        box-shadow: 0px 1.25em 2.5em $color-button-shadow;
+        transform: scale(1.2);
+      }
+    }
   }
 
   &__title a {
@@ -127,6 +179,12 @@ export default {
     font-family: $heading-font-family;
     font-weight: bold;
     color: $color-text-light;
+  }
+
+  &__btn {
+    @media (min-width: $breakpoint-lg) {
+      display: none;
+    }
   }
 }
 
