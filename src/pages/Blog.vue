@@ -1,28 +1,39 @@
 <template>
   <layout>
-    <main role="main" class="container">
-      <h1 class="title">Blog (comming soon)</h1>
-      <hr class="divisior" />
+    <main role="main" class="blog container">
+      <header class="blog__header">
+        <h1 class="blog__title">Our Stories</h1>
+      </header>
 
-      <div v-for="edge in $page.post.edges" :key="edge.node.id" class="blogCard">
+      <article v-for="edge in $page.post.edges" :key="edge.node.id" class="blogCard">
         <div class="blogCard__imageContainer">
-          <g-image class="blogCard__image" :alt="edge.node.image_caption" :src="edge.node.image" />
+          <figure class="blogCard__figure">
+            <g-image
+              class="blogCard__image"
+              :alt="edge.node.image_caption"
+              :src="edge.node.image"
+            />
+          </figure>
           <g-link class="blogCard__arrow" :to="edge.node.path">
             <font-awesome :icon="['fas', 'arrow-right']" />
           </g-link>
         </div>
 
         <div class="blogCard__textContainer">
-          <g-link class="blogCard__title" :to="edge.node.path">{{ edge.node.title }}</g-link>
+          <h2 class="blogCard__title">
+            <g-link :to="edge.node.path">{{ edge.node.title }}</g-link>
+          </h2>
           <p class="blogCard__excerpt">{{ edge.node.excerpt }}</p>
           <p class="blogCard__date">{{ edge.node.category }} / {{ edge.node.created_at }}</p>
-          <g-link class="blogCard__link" :to="edge.node.path">Read the article</g-link>
+          <BaseLinkLikeButton class="blogCard__btn" :to="edge.node.path">
+            Read the article
+          </BaseLinkLikeButton>
         </div>
-      </div>
+      </article>
 
-      <Pager :info="$page.post.pageInfo" />
-
-      <div style="height:500px"></div>
+      <footer class="blog__footer">
+        <Pager :info="$page.post.pageInfo" />
+      </footer>
     </main>
   </layout>
 </template>
