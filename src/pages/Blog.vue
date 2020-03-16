@@ -35,7 +35,7 @@
       </article>
 
       <footer class="blog__footer">
-        <Pager :info="$page.post.pageInfo" />
+        <Pager class="pagination" :info="$page.post.pageInfo" />
       </footer>
     </main>
   </layout>
@@ -85,7 +85,8 @@ export default {
 
 <style lang="scss" scoped>
 .blog {
-  margin-top: 100px;
+  padding-top: $size-section-paddingTop;
+  padding-bottom: $size-section-paddingBottom;
   text-align: center;
 
   &__title {
@@ -126,6 +127,24 @@ export default {
     font-family: $heading-font-family;
     font-weight: bold;
     color: $color-text-light;
+  }
+}
+
+.pagination a {
+  margin-right: 0.625rem;
+  display: inline-flex;
+  width: $size-blogCard-paginationItem-size;
+  height: $size-blogCard-paginationItem-size;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid $color-text-lightest;
+  border-radius: 3px;
+
+  &.active--exact {
+    color: $color-text-lightest;
+    background-color: $color-black;
+    border-color: $color-black;
   }
 }
 </style>
