@@ -1,19 +1,27 @@
 <template>
   <Layout>
-    <h1>{{ $page.post.title }}</h1>
-    <section class="meta">
-      <div>
-        <strong>Author: {{ $page.post.author }}</strong>
-      </div>
-      <div>Date: {{ $page.post.created_at }}</div>
-      <!-- <p class="intro">{{ $page.post.excerpt }}</p> -->
-    </section>
+    <main role="main" class="post container">
+      <header class="post__header header">
+        <div class="header__wrapper">
+          <h1 class="header__title">{{ $page.post.title }}</h1>
+          <hr class="header__dicider" />
+          <div class="header__summary">{{ $page.post.excerpt }}</div>
+        </div>
+      </header>
 
-    <main>
-      <VueRemarkContent />
+      <article class="post__article">
+        <p class="post__details">
+          {{ $page.post.category }} / {{ $page.post.author }} /
+          {{ formatDate($page.post.created_at) }}
+        </p>
+
+        <VueRemarkContent />
+      </article>
+
+      <BaseLinkLikeButton to="/blog">Go Back</BaseLinkLikeButton>
     </main>
 
-    <g-link to="/blog">Go back</g-link>
+    <div style="height:1200px"></div>
   </Layout>
 </template>
 
@@ -22,25 +30,28 @@
 query Post ($id: ID!) {
   post(id: $id) {
     title,
-    author,
     excerpt,
-    created_at
+    author,
+    created_at,
+    category,
+    image,
+    image_caption
   }
 }
 </page-query>
 
 <script>
+import { formatDateToDayMonthYear } from "@/utils/date"
+
 export default {
   metaInfo: {
     title: "POST_NAME",
     meta: [{ key: "robots", name: "robots", content: "noindex, nofollow, disallow" }] // remove this line when the post is ready
+  },
+  methods: {
+    formatDate(payload) {
+      return formatDateToDayMonthYear(payload)
+    }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.meta {
-  padding: 1rem 0.3rem;
-  background-color: #bbb;
-}
-</style>
