@@ -77,6 +77,11 @@ export default {
   components: {
     Pager
   },
+  mounted() {
+    gsap.set(".pageTransitionWrapper", { autoAlpha: 0 })
+    const tl = gsap.timeline()
+    tl.to(".pageTransitionWrapper", 0.6, { autoAlpha: 1 })
+  },
   methods: {
     formatDate(payload) {
       return formatDateToDayMonthYear(payload)
