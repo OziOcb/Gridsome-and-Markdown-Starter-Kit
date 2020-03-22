@@ -28,6 +28,7 @@
           <p class="blogCard__details">
             {{ edge.node.category }} / {{ formatDate(edge.node.created_at) }}
           </p>
+
           <BaseLinkLikeButton class="blogCard__btn" :to="edge.node.path">
             Read the article
           </BaseLinkLikeButton>
@@ -67,6 +68,7 @@ query Post($page:Int) {
 <script>
 import { Pager } from "gridsome"
 import { formatDateToDayMonthYear } from "@/utils/date"
+import { gsap } from "gsap"
 
 export default {
   metaInfo: {
@@ -79,6 +81,19 @@ export default {
     formatDate(payload) {
       return formatDateToDayMonthYear(payload)
     }
+  },
+  beforeRouteLeave(to, from, next) {
+    const tl = gsap.timeline({ onComplete: next })
+    // prettier-ignore
+    tl
+      .to('.blogCard__arrow', 0.3, { autoAlpha: 0, scale: 4 }, 0)
+      .to('.blogCard__btn', 0.3, { autoAlpha: 0, scale: 0.8 }, 0)
+      .to('.blogCard__title', 1, {  x: '-120%' }, 0)
+      .to('.blogCard__excerpt', 1, {  x: '-120%' }, 0.15)
+      .to('.blogCard__details', 1, {  x: '-120%' }, 0.3)
+      .to('.blogCard__figure', .6, { autoAlpha: 0, y: 50}, 0.3)
+      .to('.blogCard__imageContainer', 1.2, { autoAlpha: 0, y: 50}, 0.3)
+      .to(".pageTransitionWrapper", 0.6, { autoAlpha: 0 }, 0.6);
   }
 }
 </script>
@@ -146,6 +161,9 @@ export default {
   }
 
   &__textContainer {
+    padding-bottom: 50px;
+    overflow: hidden;
+
     @media (min-width: $breakpoint-lg) {
       margin: 20px;
       padding: 150px 80px 0 40px;
@@ -195,6 +213,7 @@ export default {
   }
 
   &__title a {
+    display: block;
     text-decoration: none;
   }
 
