@@ -42,26 +42,18 @@ query Post ($id: ID!) {
 
 <script>
 import { formatDateToDayMonthYear } from "@/utils/date"
-import { gsap } from "gsap"
+import { pageTransitionEnter, pageTransitionLeave } from "@/mixins/pageTransitions"
 
 export default {
   metaInfo: {
     title: "POST_NAME",
     meta: [{ key: "robots", name: "robots", content: "noindex, nofollow, disallow" }] // remove this line when the post is ready
   },
-  mounted() {
-    gsap.set(".pageTransitionWrapper", { autoAlpha: 0 })
-    const tl = gsap.timeline()
-    tl.to(".pageTransitionWrapper", 0.6, { autoAlpha: 1 })
-  },
+  mixins: [pageTransitionEnter, pageTransitionLeave],
   methods: {
     formatDate(payload) {
       return formatDateToDayMonthYear(payload)
     }
-  },
-  beforeRouteLeave(to, from, next) {
-    const tl = gsap.timeline({ onComplete: next })
-    tl.to(".pageTransitionWrapper", 0.6, { autoAlpha: 0 })
   }
 }
 </script>

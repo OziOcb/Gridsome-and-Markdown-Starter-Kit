@@ -68,6 +68,7 @@ query Post($page:Int) {
 <script>
 import { Pager } from "gridsome"
 import { formatDateToDayMonthYear } from "@/utils/date"
+import { pageTransitionEnter } from "@/mixins/pageTransitions"
 import { gsap } from "gsap"
 
 export default {
@@ -77,11 +78,7 @@ export default {
   components: {
     Pager
   },
-  mounted() {
-    gsap.set(".pageTransitionWrapper", { autoAlpha: 0 })
-    const tl = gsap.timeline()
-    tl.to(".pageTransitionWrapper", 0.6, { autoAlpha: 1 })
-  },
+  mixins: [pageTransitionEnter],
   methods: {
     formatDate(payload) {
       return formatDateToDayMonthYear(payload)
