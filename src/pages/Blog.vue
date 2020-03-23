@@ -87,39 +87,36 @@ export default {
     if (checkWindowWidth() < breakpoint.lg) {
       enterPageWithBasicTransition()
     } else {
-      const tl = gsap.timeline()
-      // prettier-ignore
-      tl
-        .from('.blogCard__arrow', 0.3, { autoAlpha: 0, scale: 4 }, 0)
-        .from('.blogCard__btn', 0.3, { autoAlpha: 0, scale: 0.8 }, 0)
-        .from('.blogCard__title', 1, {  x: '-120%' }, 0)
-        .from('.blogCard__excerpt', 1, {  x: '-120%' }, 0.15)
-        .from('.blogCard__details', 1, {  x: '-120%' }, 0.3)
-        .from('.blogCard__figure', .6, { autoAlpha: 0, y: 50}, 0.3)
-        .from('.blogCard__imageContainer', 1.2, { autoAlpha: 0, y: 50}, 0.3)
-        .from(".pageTransitionWrapper", 0.6, { autoAlpha: 0 }, 0.6);
+      this.gsapPageTransition({ pageEnter: true })
     }
   },
   methods: {
     formatDate(payload) {
       return formatDateToDayMonthYear(payload)
+    },
+    gsapPageTransition({ onComplete, pageEnter }) {
+      const tl = gsap.timeline({ onComplete })
+
+      // TODO: Include in README.md that
+      // - the best way to set page transitions is to set the one for page leave (that will be reversed on page enter)
+
+      tl.to(".blogCard__arrow", 0.3, { autoAlpha: 0, scale: 4 }, 0)
+        .to(".blogCard__btn", 0.3, { autoAlpha: 0, scale: 0.8 }, 0)
+        .to(".blogCard__title", 1, { x: "-120%" }, 0)
+        .to(".blogCard__excerpt", 1, { x: "-120%" }, 0.15)
+        .to(".blogCard__details", 1, { x: "-120%" }, 0.3)
+        .to(".blogCard__figure", 0.6, { autoAlpha: 0, y: 50 }, 0.3)
+        .to(".blogCard__imageContainer", 1.2, { autoAlpha: 0, y: 50 }, 0.3)
+        .to(".pageTransitionWrapper", 0.6, { autoAlpha: 0 }, 0.6)
+
+      return pageEnter ? tl.reverse(0) : tl.play()
     }
   },
   beforeRouteLeave(to, from, next) {
     if (checkWindowWidth() < breakpoint.lg) {
       leavePageWithBasicTransition(next)
     } else {
-      const tl = gsap.timeline({ onComplete: next })
-      // prettier-ignore
-      tl
-        .to('.blogCard__arrow', 0.3, { autoAlpha: 0, scale: 4 }, 0)
-        .to('.blogCard__btn', 0.3, { autoAlpha: 0, scale: 0.8 }, 0)
-        .to('.blogCard__title', 1, {  x: '-120%' }, 0)
-        .to('.blogCard__excerpt', 1, {  x: '-120%' }, 0.15)
-        .to('.blogCard__details', 1, {  x: '-120%' }, 0.3)
-        .to('.blogCard__figure', .6, { autoAlpha: 0, y: 50}, 0.3)
-        .to('.blogCard__imageContainer', 1.2, { autoAlpha: 0, y: 50}, 0.3)
-        .to(".pageTransitionWrapper", 0.6, { autoAlpha: 0 }, 0.6);
+      this.gsapPageTransition({ onComplete: next })
     }
   }
 }
