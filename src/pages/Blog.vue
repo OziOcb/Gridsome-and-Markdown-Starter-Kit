@@ -108,6 +108,7 @@ export default {
         .to(".blogCard__figure", 0.6, { autoAlpha: 0, y: 50 }, 0.3)
         .to(".blogCard__imageContainer", 1.2, { autoAlpha: 0, y: 50 }, 0.3)
         .to(".pageTransitionWrapper", 0.6, { autoAlpha: 0 }, 0.6)
+        .to(".pageTransitionOverlay", 1, { autoAlpha: 1 }, 0.8)
 
       return pageEnter ? tl.reverse(0) : tl.play()
     }
