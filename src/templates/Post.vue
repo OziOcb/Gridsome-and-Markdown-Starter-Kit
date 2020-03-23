@@ -42,14 +42,14 @@ query Post ($id: ID!) {
 
 <script>
 import { formatDateToDayMonthYear } from "@/utils/date"
-import { pageTransitionEnter, pageTransitionLeave } from "@/mixins/pageTransitions"
+import { basicPageTransitionEnter, basicPageTransitionLeave } from "@/mixins/pageTransitions"
 
 export default {
   metaInfo: {
     title: "POST_NAME",
     meta: [{ key: "robots", name: "robots", content: "noindex, nofollow, disallow" }] // remove this line when the post is ready
   },
-  mixins: [pageTransitionEnter, pageTransitionLeave],
+  mixins: [basicPageTransitionEnter, basicPageTransitionLeave],
   methods: {
     formatDate(payload) {
       return formatDateToDayMonthYear(payload)

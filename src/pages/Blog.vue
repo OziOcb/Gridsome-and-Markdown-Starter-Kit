@@ -68,7 +68,9 @@ query Post($page:Int) {
 <script>
 import { Pager } from "gridsome"
 import { formatDateToDayMonthYear } from "@/utils/date"
-import { pageTransitionEnter } from "@/mixins/pageTransitions"
+import { checkWindowWidth } from "@/utils/window"
+import breakpoint from "@/utils/breakpoints"
+import { basicPageTransitionEnter, leavePageWithBasicTransition } from "@/mixins/pageTransitions"
 import { gsap } from "gsap"
 
 export default {
@@ -78,24 +80,28 @@ export default {
   components: {
     Pager
   },
-  mixins: [pageTransitionEnter],
+  mixins: [basicPageTransitionEnter],
   methods: {
     formatDate(payload) {
       return formatDateToDayMonthYear(payload)
     }
   },
   beforeRouteLeave(to, from, next) {
-    const tl = gsap.timeline({ onComplete: next })
-    // prettier-ignore
-    tl
-      .to('.blogCard__arrow', 0.3, { autoAlpha: 0, scale: 4 }, 0)
-      .to('.blogCard__btn', 0.3, { autoAlpha: 0, scale: 0.8 }, 0)
-      .to('.blogCard__title', 1, {  x: '-120%' }, 0)
-      .to('.blogCard__excerpt', 1, {  x: '-120%' }, 0.15)
-      .to('.blogCard__details', 1, {  x: '-120%' }, 0.3)
-      .to('.blogCard__figure', .6, { autoAlpha: 0, y: 50}, 0.3)
-      .to('.blogCard__imageContainer', 1.2, { autoAlpha: 0, y: 50}, 0.3)
-      .to(".pageTransitionWrapper", 0.6, { autoAlpha: 0 }, 0.6);
+    if (checkWindowWidth() < breakpoint.lg) {
+      leavePageWithBasicTransition(next)
+    } else {
+      const tl = gsap.timeline({ onComplete: next })
+      // prettier-ignore
+      tl
+        .to('.blogCard__arrow', 0.3, { autoAlpha: 0, scale: 4 }, 0)
+        .to('.blogCard__btn', 0.3, { autoAlpha: 0, scale: 0.8 }, 0)
+        .to('.blogCard__title', 1, {  x: '-120%' }, 0)
+        .to('.blogCard__excerpt', 1, {  x: '-120%' }, 0.15)
+        .to('.blogCard__details', 1, {  x: '-120%' }, 0.3)
+        .to('.blogCard__figure', .6, { autoAlpha: 0, y: 50}, 0.3)
+        .to('.blogCard__imageContainer', 1.2, { autoAlpha: 0, y: 50}, 0.3)
+        .to(".pageTransitionWrapper", 0.6, { autoAlpha: 0 }, 0.6);
+    }
   }
 }
 </script>

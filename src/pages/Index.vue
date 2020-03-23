@@ -8,7 +8,7 @@
 
 <script>
 import SectionHero from "@/components/SectionHero.vue"
-import { pageTransitionEnter, pageTransitionLeave } from "@/mixins/pageTransitions"
+import { basicPageTransitionEnter, basicPageTransitionLeave } from "@/mixins/pageTransitions"
 
 export default {
   metaInfo: {
@@ -17,6 +17,6 @@ export default {
   components: {
     SectionHero
   },
-  mixins: [pageTransitionEnter, pageTransitionLeave]
+  mixins: [basicPageTransitionEnter, basicPageTransitionLeave]
 }
 </script>
