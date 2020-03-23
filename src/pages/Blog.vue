@@ -99,9 +99,6 @@ export default {
     gsapPageTransition({ onComplete, pageEnter }) {
       const tl = gsap.timeline({ onComplete })
 
-      // TODO: Include in README.md that
-      // - the best way to set page transitions is to set the one for page leave (that will be reversed on page enter)
-
       tl.to(".blogCard__arrow", 0.3, { autoAlpha: 0, scale: 4 }, 0)
         .to(".blogCard__btn", 0.3, { autoAlpha: 0, scale: 0.8 }, 0)
         .to(".blogCard__title", 1, { x: "-120%" }, 0)
