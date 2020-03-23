@@ -70,7 +70,10 @@ import { Pager } from "gridsome"
 import { formatDateToDayMonthYear } from "@/utils/date"
 import { checkWindowWidth } from "@/utils/window"
 import breakpoint from "@/utils/breakpoints"
-import { basicPageTransitionEnter, leavePageWithBasicTransition } from "@/mixins/pageTransitions"
+import {
+  enterPageWithBasicTransition,
+  leavePageWithBasicTransition
+} from "@/mixins/pageTransitions"
 import { gsap } from "gsap"
 
 export default {
@@ -80,7 +83,23 @@ export default {
   components: {
     Pager
   },
-  mixins: [basicPageTransitionEnter],
+  mounted() {
+    if (checkWindowWidth() < breakpoint.lg) {
+      enterPageWithBasicTransition()
+    } else {
+      const tl = gsap.timeline()
+      // prettier-ignore
+      tl
+        .from('.blogCard__arrow', 0.3, { autoAlpha: 0, scale: 4 }, 0)
+        .from('.blogCard__btn', 0.3, { autoAlpha: 0, scale: 0.8 }, 0)
+        .from('.blogCard__title', 1, {  x: '-120%' }, 0)
+        .from('.blogCard__excerpt', 1, {  x: '-120%' }, 0.15)
+        .from('.blogCard__details', 1, {  x: '-120%' }, 0.3)
+        .from('.blogCard__figure', .6, { autoAlpha: 0, y: 50}, 0.3)
+        .from('.blogCard__imageContainer', 1.2, { autoAlpha: 0, y: 50}, 0.3)
+        .from(".pageTransitionWrapper", 0.6, { autoAlpha: 0 }, 0.6);
+    }
+  },
   methods: {
     formatDate(payload) {
       return formatDateToDayMonthYear(payload)
