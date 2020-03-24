@@ -17,7 +17,7 @@
 
         <VueRemarkContent class="post__content" />
 
-        <BaseLinkLikeButton to="/blog">Go Back</BaseLinkLikeButton>
+        <BaseLinkLikeButton class="post__backBtn" to="/blog">Back to Blog</BaseLinkLikeButton>
       </article>
     </main>
   </Layout>
@@ -41,14 +41,21 @@ query Post ($id: ID!) {
 
 <script>
 import { formatDateToDayMonthYear } from "@/utils/date"
-import { basicPageTransitionEnter, basicPageTransitionLeave } from "@/mixins/pageTransitions"
+import { checkWindowWidth } from "@/utils/window"
+import breakpoint from "@/utils/breakpoints"
+import {
+  durationTransitionForWrapper,
+  durationTransitionForOverlay,
+  enterPageWithBasicTransition,
+  leavePageWithBasicTransition
+} from "@/utils/transitions"
+import { gsap } from "gsap"
 
 export default {
   metaInfo: {
     title: "POST_NAME",
     meta: [{ key: "robots", name: "robots", content: "noindex, nofollow, disallow" }] // remove this line when the post is ready
   },
-  mixins: [basicPageTransitionEnter, basicPageTransitionLeave],
   computed: {
     cssProps() {
       return {
@@ -57,9 +64,35 @@ export default {
       }
     }
   },
+  mounted() {
+    if (checkWindowWidth() < breakpoint.lg) {
+      enterPageWithBasicTransition()
+    } else {
+      this.gsapPageTransition({ pageEnter: true })
+    }
+  },
   methods: {
     formatDate(payload) {
       return formatDateToDayMonthYear(payload)
+    },
+    gsapPageTransition({ onComplete, pageEnter }) {
+      const tl = gsap.timeline({ onComplete })
+
+      tl.to(".header__divider", 0.3, { autoAlpha: 0 }, 0)
+        .to(".post__backBtn", 0.3, { autoAlpha: 0, scale: 2 }, 0)
+        .to(".header__summary", 0.3, { autoAlpha: 0, y: "4em" }, 0.3)
+        .to(".header__title", 0.3, { autoAlpha: 0, y: "-0.5em" }, 0.5)
+        .to(".pageTransitionWrapper", durationTransitionForWrapper, { autoAlpha: 0 }, 0.4)
+        .to(".pageTransitionOverlay", durationTransitionForOverlay, { autoAlpha: 1 }, 0.7)
+
+      return pageEnter ? tl.reverse(0) : tl.play()
+    }
+  },
+  beforeRouteLeave(to, from, next) {
+    if (checkWindowWidth() < breakpoint.lg) {
+      leavePageWithBasicTransition(next)
+    } else {
+      this.gsapPageTransition({ onComplete: next })
     }
   }
 }
