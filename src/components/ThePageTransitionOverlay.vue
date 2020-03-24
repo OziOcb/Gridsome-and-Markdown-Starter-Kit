@@ -34,6 +34,7 @@ export default {
 
   &__logo {
     width: 250px;
+    pointer-events: none;
   }
 }
 </style>
