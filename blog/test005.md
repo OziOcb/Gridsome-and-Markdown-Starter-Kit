@@ -1,5 +1,6 @@
 ---
 title: Test Post Title 005
+title_color: "#fcfcfc"
 author: Paul Ozyzniewski
 category: Digital
 created_at: 2020-01-05T00:00:01.723Z

@@ -1,24 +1,23 @@
 <template>
   <Layout>
-    <main role="main" class="post container">
+    <main role="main" class="post" :style="cssProps">
       <header class="post__header header">
         <div class="header__wrapper">
-          <h1 class="header__title">{{ $page.post.title }}</h1>
-          <hr class="header__dicider" />
+          <h1 class="header__title display-xl">{{ $page.post.title }}</h1>
+          <hr class="header__divider" />
           <div class="header__summary">{{ $page.post.excerpt }}</div>
         </div>
       </header>
 
-      <article class="post__article">
+      <article class="post__article container">
         <p class="post__details">
           {{ $page.post.category }} / {{ $page.post.author }} /
           {{ formatDate($page.post.created_at) }}
         </p>
 
         <VueRemarkContent />
+        <BaseLinkLikeButton to="/blog">Go Back</BaseLinkLikeButton>
       </article>
-
-      <BaseLinkLikeButton to="/blog">Go Back</BaseLinkLikeButton>
     </main>
 
     <div style="height:1200px"></div>
@@ -30,6 +29,7 @@
 query Post ($id: ID!) {
   post(id: $id) {
     title,
+    title_color,
     excerpt,
     author,
     created_at,
@@ -50,6 +50,14 @@ export default {
     meta: [{ key: "robots", name: "robots", content: "noindex, nofollow, disallow" }] // remove this line when the post is ready
   },
   mixins: [basicPageTransitionEnter, basicPageTransitionLeave],
+  computed: {
+    cssProps() {
+      return {
+        "--background-image-url": `url('${this.$page.post.image.src}')`,
+        "--color-title": this.$page.post.title_color
+      }
+    }
+  },
   methods: {
     formatDate(payload) {
       return formatDateToDayMonthYear(payload)
@@ -57,3 +65,40 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.post {
+  padding-top: $size-section-paddingTop;
+}
+.header {
+  padding: 0 $size-gutter-width;
+  display: flex;
+  width: 100%;
+  min-height: 85vh;
+  justify-content: center;
+  align-items: center;
+  background-image: var(--background-image-url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &__wrapper {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  &__title,
+  &__summary {
+    color: var(--color-title);
+  }
+
+  &__divider {
+    margin: 30px auto 40px;
+    display: block;
+    max-width: 150px;
+    height: 3px;
+    background-color: var(--color-title);
+    border: none;
+  }
+}
+</style>
