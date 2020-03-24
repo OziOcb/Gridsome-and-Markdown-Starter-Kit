@@ -9,18 +9,17 @@
         </div>
       </header>
 
-      <article class="post__article container">
+      <article class="post__article container container--sm">
         <p class="post__details">
           {{ $page.post.category }} / {{ $page.post.author }} /
           {{ formatDate($page.post.created_at) }}
         </p>
 
-        <VueRemarkContent />
+        <VueRemarkContent class="post__content" />
+
         <BaseLinkLikeButton to="/blog">Go Back</BaseLinkLikeButton>
       </article>
     </main>
-
-    <div style="height:1200px"></div>
   </Layout>
 </template>
 
@@ -69,7 +68,17 @@ export default {
 <style lang="scss" scoped>
 .post {
   padding-top: $size-section-paddingTop;
+  padding-bottom: $size-section-paddingBottom;
+
+  &__details {
+    margin-top: 0;
+  }
+
+  &__content {
+    margin-bottom: 4rem;
+  }
 }
+
 .header {
   padding: 0 $size-gutter-width;
   display: flex;

@@ -2,5 +2,9 @@
   margin: 0 auto;
   padding-right: $size-gutter-width;
   padding-left: $size-gutter-width;
-  max-width: $size-container-max-width;
+  max-width: $size-container-maxWidth;
+
+  &--sm {
+    max-width: $size-container-blogPost-maxWidth;
+  }
 }
