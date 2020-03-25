@@ -138,6 +138,39 @@ To do that you must use `~@/` as a prefix in the url
 }
 ```
 
+## LODASH \_
+
+Lodash is a great library, well crafted, battle tested and with a strong team.
+
+- Lodash official [docs](https://lodash.com/docs/4.17.15)
+- [Usefull source](https://youmightnotneed.com/lodash/)
+
+### Usage:
+
+```javascript
+// YourComponent.vue
+<script>
+import { _debounce } from 'lodash-es';	// Ad.1
+
+export default {
+	data: function () {
+	  return {
+	    searchInput: '',
+	    filterKey: ''
+	  }
+	},
+
+	methods: {
+	  debounceInput: _debounce(function () {
+	    this.filterKey = this.searchInput;
+	  }, 500)
+	}
+</script>
+```
+
+1. `_debaunce`
+   - Add `_` prefix to indicate that this function comes from Lodash
+
 ## PAGE TRANSITIONS
 
 ### The Page Transiton Overlay Component
