@@ -55,6 +55,46 @@ head.meta.push(
 
 1. Always use `key` property ! (that makes [overwriting form child component](https://gridsome.org/docs/head/#how-to-overwrite-from-child-component) easier)
 
+## FLUID TYPOGRAPHY
+
+What is the [Fluid Typography](https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm)?
+
+### Setting fluid font-sizes for h1-h6, links and body
+
+- You can find the function responsible for setting **min** and **max** font sizes inside `/src/assets/sass/globals/_typography.scss`
+
+- To set the min font-size find and edit the `$typography-type-scale` array
+
+```javascript
+$typography-type-scale: (
+  -2: 0.79rem,
+  -1: 0.889rem, // h5, h6, body, a
+  0: 1rem,      // h4, buttons
+  1: 1.125rem,  // h3
+  2: 1.266rem,  // h2
+  3: 1.424rem,  // h1
+  4: 1.602rem,  // .display-md
+  5: 1.802rem,  // .display-lg
+  6: 2.027rem   // .display-xl
+);
+```
+
+- To set the max font-size find and edit the `$typography-type-scale-contrast` array
+
+```javascript
+$typography-type-scale-contrast: (
+  -2: 0.75rem,
+  -1: 1rem,       // h5, h6, body, a
+  0: 1.3333rem,   // h4, buttons
+  1: 1.777rem,    // h3
+  2: 2.369rem,    // h2
+  3: 3.157rem,    // h1
+  4: 4.209rem,    // .display-md
+  5: 5.61rem,     // .display-lg
+  6: 7.478rem     // .display-xl
+);
+```
+
 ## USING SVGs AS COMPONENTS
 
 Thanks to the [vue-svg-loader](https://gridsome.org/docs/assets-svg/#using-svgs-as-components) you can import SVGs as you do with any other Vue component.

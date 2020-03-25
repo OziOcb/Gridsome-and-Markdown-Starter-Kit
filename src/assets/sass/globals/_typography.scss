@@ -281,16 +281,17 @@
 
 // Using vertical rhythm methods from https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm
 // https://type-scale.com/
+// prettier-ignore
 $typography-type-scale: (
   -2: 0.79rem,
-  -1: 0.889rem,
-  0: 1rem,
-  1: 1.125rem,
-  2: 1.266rem,
-  3: 1.424rem,
-  4: 1.602rem,
-  5: 1.802rem,
-  6: 2.027rem
+  -1: 0.889rem, // h5, h6, body, a
+  0: 1rem,      // h4, buttons
+  1: 1.125rem,  // h3
+  2: 1.266rem,  // h2
+  3: 1.424rem,  // h1
+  4: 1.602rem,  // .display-md
+  5: 1.802rem,  // .display-lg
+  6: 2.027rem   // .display-xl
 );
 
 @function typography-type-scale($level) {
@@ -303,16 +304,17 @@ $typography-type-scale: (
   @return null;
 }
 
+// prettier-ignore
 $typography-type-scale-contrast: (
   -2: 0.75rem,
-  -1: 1rem,
-  0: 1.3333rem,
-  1: 1.777rem,
-  2: 2.369rem,
-  3: 3.157rem,
-  4: 4.209rem,
-  5: 5.61rem,
-  6: 7.478rem
+  -1: 1rem,       // h5, h6, body, a
+  0: 1.3333rem,   // h4, buttons
+  1: 1.777rem,    // h3
+  2: 2.369rem,    // h2
+  3: 3.157rem,    // h1
+  4: 4.209rem,    // .display-md
+  5: 5.61rem,     // .display-lg
+  6: 7.478rem     // .display-xl
 );
 
 @function typography-type-scale-contrast($level) {
@@ -392,17 +394,17 @@ $typography-line-heights-contrast: (
   );
 }
 
-%typography-display-1 {
+%typography-display-xl {
   @include typography-got-rhythm(6);
   @extend %font-heading;
 }
 
-%typography-display-2 {
+%typography-display-lg {
   @include typography-got-rhythm(5);
   @extend %font-heading;
 }
 
-%typography-display-3 {
+%typography-display-md {
   @include typography-got-rhythm(4);
   @extend %font-heading;
 }

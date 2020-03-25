@@ -16,13 +16,13 @@ body {
 // Base element styles
 // ===
 .display-xl {
-  @extend %typography-display-1;
+  @extend %typography-display-xl;
 }
 .display-lg {
-  @extend %typography-display-2;
+  @extend %typography-display-lg;
 }
 .display-md {
-  @extend %typography-display-3;
+  @extend %typography-display-md;
 }
 h1 {
   @extend %typography-xxlarge;
