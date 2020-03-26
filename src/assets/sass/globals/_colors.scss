@@ -9,6 +9,7 @@ $color-box-shadow: rgba(0, 0, 0, 0.25);
 
 // CONTENT
 $color-body-bg: #efefef;
+$color-body-bg-dark: #e2e2e2;
 $color-body-bg-light: $color-white;
 $color-bg-dark: $color-black;
 $color-text-primary: #3e3e3e;
@@ -42,64 +43,8 @@ $color-button-bg-hover: darken(desaturate($color-button-bg, 20%), 10%);
 $color-button-text: $color-white;
 $color-button-shadow: $color-box-shadow;
 // alt
-$color-button-alt-bg: transparent;
-$color-button-alt-bg-hover: rgba(255, 255, 255, 0.25);
-$color-button-alt-text: $color-black;
-$color-button-alt-shadow: $color-box-shadow;
-$color-button-alt-border: $color-black;
-
-// GITHUB CALENDAR
-$color-github-calendar-bg: $color-white;
-$color-github-calendar-text: #666;
-$color-github-calendar-shadow: $color-box-shadow;
-$color-github-calendar-single-commit-bg: $color-secondary;
-$color-github-calendar-svg-fill: $color-github-calendar-single-commit-bg;
-
-// THE SKILLS GRID
-$color-skills-grid-box-bg: $color-secondary;
-$color-skills-grid-box-bg-hover: transparent;
-// brands colors
-$color-logos: (
-  "AdobeIllustrator": #ff7c00,
-  "AdobePhotoshop": #00c8ff,
-  "AdobeTypekit": #87ec00,
-  "AdobeXd": #ff2bc2,
-  "Atom": #66595c,
-  "Babel": #f9dc3e,
-  "Basecamp": #5ecc62,
-  "Bit": #73398d,
-  "Bootstrap": #563d7c,
-  "Codeoen": #000,
-  "CodeSandbox": #000,
-  "Codewars": #ad2c27,
-  "Css": #1572b6,
-  "CssWizardy": #f43059,
-  "EsLint": #4b32c3,
-  "Figma": #f24e1e,
-  "FilleZilla": #bf0000,
-  "Firebase": #ffca28,
-  "Git": #f14e32,
-  "GitHub": #181717,
-  "GitLab": #fca121,
-  "GraphQl": #e10098,
-  "Gulp": #da4648,
-  "Html5": #e34f26,
-  "Javascript": #f7df1e,
-  "Jekyll": #c00,
-  "Jest": #c21325,
-  "Json": #000,
-  "Markdown": #000,
-  "MaterialDesign": #757575,
-  "Npm": #cb3837,
-  "NuxtJs": #00c58e,
-  "Postman": #ff6c37,
-  "PowerShell": #5391fe,
-  "Prettier": #f7b93e,
-  "Sass": #c69,
-  "VSC": #007acc,
-  "VueJs": #4fc08d,
-  "Vue": #4fc08d,
-  "Webpack": #8dd6f9,
-  "Yarn": #2c8ebb,
-  "Zapier": #ff4a00
-);
+$color-buttonAlt-bg: transparent;
+$color-buttonAlt-bg-hover: rgba(255, 255, 255, 0.25);
+$color-buttonAlt-text: $color-black;
+$color-buttonAlt-shadow: $color-box-shadow;
+$color-buttonAlt-border: $color-black;

@@ -1,11 +1,10 @@
 <template>
   <section class="hero">
     <div class="hero__contentWrapper">
-      <p class="hero__lead">Hello</p>
-      <p class="hero__heading">It's Paul</p>
+      <p class="hero__heading">Hello!</p>
       <h1 class="hero__extraLead">
         The
-        <strong>Front End Developer</strong>
+        <strong>Gridsome and Markdown Starter Kit</strong>
         you need!
       </h1>
     </div>
@@ -48,65 +47,35 @@ export default {
       ". contentWrapper contentWrapper contentWrapper"
       "socialIcons . scrollBtn .";
   }
-  @media (min-width: $breakpoint-xl) {
-    &:before {
-      position: absolute;
-      z-index: $layer-negative-z-index;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.15;
-      content: "";
-      background: url("~@/assets/img/png/mbp.png") 60vw center no-repeat;
-      @media (min-width: $breakpoint-xxl) {
-        background-position: 53vw;
-      }
-      @media (min-width: 1441px) {
-        background-position: 47vw;
-        transform: scale(1.2);
-      }
-      @media (min-width: 1900px) {
-        background-position: 42vw;
-        transform: scale(1.2);
-      }
-      @media (min-width: 2200px) {
-        background-position: 42vw 11%;
-        transform: scale(1.6);
-      }
-    }
-  }
 
   &__contentWrapper {
     position: relative;
     grid-area: contentWrapper;
     align-self: center;
     margin-left: 1rem;
-    @media (min-width: $breakpoint-lg) {
-      &:before {
-        position: absolute;
-        z-index: $layer-negative-z-index;
-        top: 50%;
-        left: 10px;
+    &:before {
+      position: absolute;
+      z-index: $layer-negative-z-index;
+      top: 50%;
+      left: 10px;
+      font-size: 250px;
+      content: "Yo!";
+      color: $color-text-lightest;
+      transition: color $duration-animation-base ease;
+      transform: translateY(-50%);
+      @media (min-width: $breakpoint-lg) {
         font-size: 360px;
-        content: "Dev";
-        color: $color-text-lightest;
-        transition: color $duration-animation-base ease;
-        transform: translateY(-50%);
       }
-      &:hover:before {
-        color: rgba($color-secondary, 0.3);
-      }
+    }
+    &:hover:before {
+      color: rgba($color-secondary, 0.3);
     }
   }
 
-  &__lead {
-    @extend %typography-hero-lead;
-    margin: 0 0 -0.2em -0.06em;
-  }
   &__heading {
-    @extend %typography-hero;
+    @extend %typography-xxlarge;
     margin: 0 0 0 -0.07em;
+    font-size: 80px;
   }
   &__extraLead {
     @extend %typography-small;
@@ -131,7 +100,6 @@ export default {
     justify-self: center;
     align-self: end;
     margin-bottom: 13vh;
-    display: none; // TODO: #043 - Create a scroll down button for the Hero Section
   }
 }
 </style>

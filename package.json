@@ -1,12 +1,12 @@
 {
-  "name": "pozyzniewski-portfolio",
+  "name": "gridsome-and-headless-wp",
   "version": "1.0.0",
-  "description": "This is the my personal portfolio project",
+  "description": "A basic Gridsome Starter Kit using Markdown files for the content",
   "private": true,
   "author": "Paul Ozyzniewski",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OziOcb/pozyzniewski-portfolio.git"
+    "url": "https://github.com/OziOcb/Gridsome-and-Markdown-Starter-Kit"
   },
   "scripts": {
     "build": "gridsome build",
@@ -19,9 +19,9 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/vue-fontawesome": "^0.1.8",
     "@gridsome/vue-remark": "^0.1.9",
-    "github-calendar": "^1.3.4",
     "gridsome": "^0.7.10",
     "gsap": "^3.0.4",
+    "lodash-es": "^4.17.15",
     "normalize.css": "^8.0.1",
     "sweet-modal-vue": "^2.0.0",
     "vuelidate": "^0.7.4"

@@ -28,7 +28,10 @@ module.exports = {
         typeName: "Post", // Required
         baseDir: "./blog", // Where .md files are located
         pathPrefix: "/blog", // Add route prefix. Optional
-        template: "./src/templates/Post.vue" // Optional
+        template: "./src/templates/Post.vue", // Optional
+        remark: {
+          autolinkHeadings: false // disable auto-adding links to headings
+        }
       }
     }
   ],

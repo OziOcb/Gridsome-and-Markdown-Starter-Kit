@@ -98,7 +98,7 @@ export default {
   overflow: hidden;
   width: 100%;
   background: $color-input-bg;
-  border-radius: $size-input-border-radius;
+  border-radius: $size-input-borderRadius;
 }
 .formField__bar {
   position: absolute;

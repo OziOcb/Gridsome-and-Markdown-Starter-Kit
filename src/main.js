@@ -46,20 +46,40 @@ import DefaultLayout from "~/layouts/Default.vue"
 /* FontAwesome 5 */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import { config, library } from "@fortawesome/fontawesome-svg-core"
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
+import { faArrowDown, faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
-library.add(faGithub, faLinkedin, faArrowDown)
+library.add(faGithub, faLinkedin, faArrowDown, faArrowRight)
 
-// Vuelidate
+/* Vuelidate */
 import Vuelidate from "vuelidate"
 
 /**
  * Export
  */
 export default function(Vue, { router, head, isClient }) {
+  // Global Head Metadata
+  head.meta.push(
+    {
+      key: "author",
+      name: "author",
+      content: "Paul Ozyzniewski"
+    },
+    {
+      key: "description",
+      name: "description",
+      content: "YOUR DESCRIPTION IN HERE"
+    },
+    {
+      key: "keywords",
+      name: "keywords",
+      content: "YOUR, KEYWORDS, IN, HERE"
+    },
+    { key: "robots", name: "robots", content: "index, follow, noodp, noydir" }
+  )
+
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout)
 

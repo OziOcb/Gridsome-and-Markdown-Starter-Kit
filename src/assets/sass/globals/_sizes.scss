@@ -6,16 +6,17 @@ $size-content-width-max: 50rem;
 $size-content-width-min: 25rem;
 
 // CONTAINER
-$size-container-max-width: 78rem;
+$size-container-maxWidth: 78rem;
+$size-container-blogPost-maxWidth: 45rem;
 
 // SECTIONS
-$size-section-padding-top: 5rem;
-$size-section-padding-top--desktop: 12.5rem;
-$size-section-padding-bottom: 7.5rem;
-$size-section-padding-bottom--desktop: 12.5rem;
+$size-section-paddingTop: 5rem;
+$size-section-paddingTop--desktop: 12.5rem;
+$size-section-paddingBottom: 7.5rem;
+$size-section-paddingBottom--desktop: 12.5rem;
 
 // Gutters
-$size-gutter-width: 2.5rem;
+$size-gutter-width: 0.625rem;
 
 // INPUTS
 // $size-input-padding-vertical: 0.75em;
@@ -23,7 +24,7 @@ $size-gutter-width: 2.5rem;
 $size-input-padding: 0 0.75rem 0.625rem 0.75rem;
 $size-input-border: 1px;
 // $size-input-border-radius: (1em + $size-input-padding-vertical * 2) / 10;
-$size-input-border-radius: 0;
+$size-input-borderRadius: 0;
 $size-input-error-margin: -0.5em 0 0 0;
 
 // BUTTONS
@@ -33,14 +34,11 @@ $size-button-padding-horizontal: $size-grid-padding * 5;
 $size-button-padding: $size-button-padding-vertical $size-button-padding-horizontal;
 
 // alt
-$size-button-alt-padding-vertical: $size-grid-padding / 1.2;
-$size-button-alt-padding-horizontal: $size-grid-padding * 1.5;
-$size-button-alt-padding: $size-button-alt-padding-vertical $size-button-alt-padding-horizontal;
+$size-buttonAlt-padding-vertical: $size-grid-padding / 1.2;
+$size-buttonAlt-padding-horizontal: $size-grid-padding * 1.5;
+$size-buttonAlt-padding: $size-buttonAlt-padding-vertical $size-buttonAlt-padding-horizontal;
 
-// SKILLS GRID
-$size-skills-grid-width: 7em;
-$size-skills-grid-gap: $size-skills-grid-width / 2;
-// Other hexagon dimensions
-$size-skills-grid-height: $size-skills-grid-width / 1.73 /* sqrt(3) */;
-$size-skills-grid-margin: $size-skills-grid-width / 2;
-$size-skills-grid-border: $size-skills-grid-margin / 1.73 /* sqrt(3) */;
+// BLOG
+$size-blogCard-paddingBottom: 4rem;
+$size-blogCard-arrow-size: 3.5rem;
+$size-blogCard-paginationItem-size: 2.5rem;
