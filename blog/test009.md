@@ -1,6 +1,7 @@
 ---
 title: Test Post Title 009
 title_color: "#fcfcfc"
+title_meta: Post Title 009
 author: Paul Ozyzniewski
 category: Digital
 created_at: 2020-01-09T00:00:01.723Z

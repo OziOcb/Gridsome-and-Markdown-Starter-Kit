@@ -29,6 +29,7 @@ query Post ($id: ID!) {
   post(id: $id) {
     title,
     title_color,
+    title_meta,
     excerpt,
     author,
     created_at,
@@ -52,9 +53,11 @@ import {
 import { gsap } from "gsap"
 
 export default {
-  metaInfo: {
-    title: "POST_NAME",
-    meta: [{ key: "robots", name: "robots", content: "noindex, nofollow, disallow" }] // remove this line when the post is ready
+  // GraphQL data in the <script> - https://github.com/gridsome/gridsome/issues/306#issuecomment-475967333
+  metaInfo() {
+    return {
+      title: this.$page.post.title_meta
+    }
   },
   computed: {
     cssProps() {
