@@ -141,7 +141,7 @@ export default {
     display: block;
     max-width: 150px;
     height: 3px;
-    background-color: $color-text-primary;
+    background-color: $color-text-default;
     border: none;
   }
 }
@@ -179,7 +179,7 @@ export default {
         left: -10%;
         width: 60%;
         content: "";
-        background-color: $color-body-bg-dark;
+        background-color: $color-blog-image-beforeElement;
       }
     }
   }
@@ -244,7 +244,7 @@ export default {
   &__details {
     font-family: $heading-font-family;
     font-weight: bold;
-    color: $color-text-light;
+    color: $color-text-alt2;
   }
 
   &__btn {
@@ -262,11 +262,11 @@ export default {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  border: 1px solid $color-text-lightest;
+  border: 1px solid $color-text-alt;
   border-radius: 3px;
 
   &.active--exact {
-    color: $color-text-lightest;
+    color: $color-text-alt;
     background-color: $color-black;
     border-color: $color-black;
   }
