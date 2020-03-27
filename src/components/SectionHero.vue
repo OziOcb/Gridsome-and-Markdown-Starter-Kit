@@ -60,7 +60,7 @@ export default {
       left: 10px;
       font-size: 250px;
       content: "Yo!";
-      color: $color-text-lightest;
+      color: $color-text-alt;
       transition: color $duration-animation-base ease;
       transform: translateY(-50%);
       @media (min-width: $breakpoint-lg) {

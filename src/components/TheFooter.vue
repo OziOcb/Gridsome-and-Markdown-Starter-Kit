@@ -44,8 +44,8 @@ export default {
   padding-top: 85px;
   display: flex;
   justify-content: center;
-  color: $color-text-light;
-  background-color: $color-bg-dark;
+  color: $color-text-alt2;
+  background-color: $color-body-bg-alt;
 
   &__logo {
     margin: 0 auto 17px;
@@ -57,7 +57,7 @@ export default {
     text-align: center;
 
     a {
-      color: $color-text-light;
+      color: $color-text-alt2;
       &:hover {
         color: $color-primary;
       }
