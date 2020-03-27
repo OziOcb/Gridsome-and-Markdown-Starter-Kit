@@ -2,23 +2,31 @@
 $color-black: #232323;
 $color-white: #fcfcfc;
 $color-green: #008080;
+$color-lightGray: #f4f4f4;
 $color-red: #f00;
-$color-accent: #a7a7a7;
-$color-outline: rgba(0, 123, 255, 0.5);
-$color-box-shadow: rgba(0, 0, 0, 0.25);
 
-// CONTENT
+// PALETTE
+$color-primary: #ef6f6c;
+$color-secondary: #465677;
+
+$color-accent: #a7a7a7;
+
+// BACKGROUND
 $color-body-bg: #efefef;
 $color-body-bg-dark: #e2e2e2;
 $color-body-bg-light: $color-white;
 $color-bg-dark: $color-black;
+
+// TYPOGRAPHY
 $color-text-primary: #3e3e3e;
 $color-text-secondary: #626262;
 $color-text-light: #adadad;
 $color-text-lightest: #e2e2e2;
 $color-heading-text: $color-text-primary;
-$color-primary: #ef6f6c;
-$color-secondary: #465677;
+
+// MISC
+$color-outline: rgba(0, 123, 255, 0.5);
+$color-box-shadow: rgba(0, 0, 0, 0.25);
 
 // MENU
 // prettier-ignore
@@ -48,3 +56,6 @@ $color-buttonAlt-bg-hover: rgba(255, 255, 255, 0.25);
 $color-buttonAlt-text: $color-black;
 $color-buttonAlt-shadow: $color-box-shadow;
 $color-buttonAlt-border: $color-black;
+
+// BLOG
+$color-blog-image-beforeElement: $color-lightGray;
