@@ -190,11 +190,17 @@ To edit basic page transitions go to `src/utils/transitions.js` and edit the `gs
 // YourPageComponent.vue
 
 <script>
-import { basicPageTransitionEnter, basicPageTransitionLeave } from "@/mixins/pageTransitions"
+import {
+  basicPageTransitionEnter,
+  basicPageTransitionLeave
+} from "@/mixins/pageTransitions"
 
 export default {
   ...
-  mixins: [basicPageTransitionEnter, basicPageTransitionLeave],
+  mixins: [
+    basicPageTransitionEnter,
+    basicPageTransitionLeave
+  ],
   ...
 }
 </script>
@@ -234,8 +240,18 @@ export default {
       const tl = gsap.timeline({ onComplete })
 
       tl.to(".YOUR_ELEMENT", 0.3, { autoAlpha: 0, scale: 4 }, 0)
-        .to(".pageTransitionWrapper", durationTransitionForWrapper, { autoAlpha: 0 }, 0)	// Ad.2
-        .to(".pageTransitionOverlay", durationTransitionForOverlay, { autoAlpha: 1 }, 0.3)	// Ad.2
+        .to( // Ad.2
+          ".pageTransitionWrapper",
+          durationTransitionForWrapper,
+          { autoAlpha: 0 },
+          0
+        )
+        .to( // Ad.2
+          ".pageTransitionOverlay",
+          durationTransitionForOverlay,
+          { autoAlpha: 1 },
+          0.3
+        )
 
       return pageEnter ? tl.reverse(0) : tl.play()
     }
