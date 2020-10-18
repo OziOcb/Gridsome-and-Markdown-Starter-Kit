@@ -12,7 +12,8 @@ or
 
 1. Clone the Repository `git clone https://github.com/OziOcb/Gridsome-and-Markdown-Starter-Kit.git`.
 2. `cd Gridsome-and-Markdown-Starter-Kit` to open the folder.
-3. `gridsome develop` to start a local dev server at `http://localhost:8080` 🎉🙌
+3. Run `yarn` or `npm install` to install project dependancies.
+4. `gridsome develop` to start a local dev server at `http://localhost:8080` 🎉🙌
 
 ## BASE COMPONENTS
 
