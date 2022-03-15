@@ -21,7 +21,7 @@
     "@gridsome/vue-remark": "^0.1.9",
     "gridsome": "^0.7.10",
     "gsap": "^3.0.4",
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.17.21",
     "normalize.css": "^8.0.1",
     "sweet-modal-vue": "^2.0.0",
     "vuelidate": "^0.7.4"
